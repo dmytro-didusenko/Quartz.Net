@@ -2,7 +2,7 @@
 using Quartz.Impl;
 using Quartz.Logging;
 
-namespace ConsoleApp6;
+namespace QuartzTest;
 public class Program
 {
     public static async  Task Main(string[] args)
@@ -23,7 +23,7 @@ public class Program
             .WithCronSchedule("0,15,30,45 */2 * * * ? * *")
             .Build();
 
-await scheduler.Start();
+        await scheduler.Start();
 
         await scheduler.ScheduleJob(job1, trigger1);
         await scheduler.ScheduleJob(job2, trigger2);
